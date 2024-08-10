@@ -1,0 +1,23 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-docstring-first
+      - id: check-yaml
+        args: [ '--unsafe' ]
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/psf/black
+    rev: 23.11.0
+    hooks:
+      - id: black
+        args: [ "--config=pyproject.toml" ]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: 'v0.0.282'
+    hooks:
+      - id: ruff
+  - repo: https://github.com/pycqa/isort
+    rev: 5.11.5
+    hooks:
+      - id: isort
+        name: isort (python)
